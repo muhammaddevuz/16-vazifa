@@ -20,10 +20,6 @@ class _InputCode extends State<InputCode> {
   @override
   void dispose() {
     // print("Dispose ishladi: ${widget.index}");
-    numberController.dispose();
-    numberController2.dispose();
-    numberController3.dispose();
-    numberController4.dispose();
     super.dispose();
   }
 
@@ -100,76 +96,63 @@ class _InputCode extends State<InputCode> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      String code = numberController.text.trim();
-                      String code2 = numberController.text.trim();
-                      String code3 = numberController.text.trim();
-                      String code4 = numberController.text.trim();
-
-                      if (code.isEmpty ||
-                          code2.isEmpty ||
-                          code3.isEmpty ||
-                          code4.isEmpty) {
-                        errorMessage = "Iltimos kerakli bo'limni to'ldiring";
-                        setState(() {});
-                      } else {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return Center(
-                              child: AlertDialog(
-                                title: const Icon(
-                                  Icons.check_circle_outline,
-                                  color: Colors.blue,
-                                  size: 150,
-                                ),
-                                content: SizedBox(
-                                  height: 190,
-                                  child: Column(
-                                    children: [
-                                      const Text(
-                                        'Your account has active',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 23,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      const Text(
-                                        'Congurulation you are succes to change your profile',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                      const SizedBox(height: 20),
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          Navigator.pushNamed(context, "/home");
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 20),
-                                          backgroundColor: Colors.blue,
-                                          foregroundColor: Colors.white,
-                                          textStyle: const TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        child: const Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 140, right: 140),
-                                          child: Text("Ok"),
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Center(
+                            child: AlertDialog(
+                              title: const Icon(
+                                Icons.check_circle_outline,
+                                color: Colors.blue,
+                                size: 150,
+                              ),
+                              content: SizedBox(
+                                height: 190,
+                                child: Column(
+                                  children: [
+                                    const Text(
+                                      'Your account has active',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 23,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const Text(
+                                      'Congurulation you are succes to change your profile',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    const SizedBox(height: 20),
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.pushNamed(context, "/home");
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 20),
+                                        backgroundColor: Colors.blue,
+                                        foregroundColor: Colors.white,
+                                        textStyle: const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 140, right: 140),
+                                        child: Text("Ok"),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            );
-                          },
-                        );
-                      }
+                            ),
+                          );
+                        },
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 20),
