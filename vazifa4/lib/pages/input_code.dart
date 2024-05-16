@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 class InputCode extends StatefulWidget {
   const InputCode({super.key});
@@ -71,94 +72,12 @@ class _InputCode extends State<InputCode> {
                   style: const TextStyle(color: Colors.red),
                 ),
                 const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: 80,
-                      height: 100,
-                      child: TextField(
-                        textAlign: TextAlign.center,
-                        controller: numberController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          label: const Center(
-                            child: Text(
-                              "0",
-                              style: TextStyle(fontSize: 25),
-                            ),
-                          ),
-                          errorText: errorMessage.isEmpty ? null : errorMessage,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 80,
-                      height: 100,
-                      child: TextField(
-                        textAlign: TextAlign.center,
-                        controller: numberController2,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          label: const Center(
-                            child: Text(
-                              "0",
-                              style: TextStyle(fontSize: 25),
-                            ),
-                          ),
-                          errorText: errorMessage.isEmpty ? null : errorMessage,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 80,
-                      height: 100,
-                      child: TextField(
-                        textAlign: TextAlign.center,
-                        controller: numberController3,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          label: const Center(
-                            child: Text(
-                              "0",
-                              style: TextStyle(fontSize: 25),
-                            ),
-                          ),
-                          errorText: errorMessage.isEmpty ? null : errorMessage,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 80,
-                      height: 100,
-                      child: TextField(
-                        textAlign: TextAlign.center,
-                        controller: numberController4,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          label: const Center(
-                            child: Text(
-                              "0",
-                              style: TextStyle(fontSize: 25),
-                            ),
-                          ),
-                          errorText: errorMessage.isEmpty ? null : errorMessage,
-                        ),
-                      ),
-                    ),
-                  ],
+                OtpTextField(
+                  fieldWidth: 70,
+                  fieldHeight: 100,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  filled: true,
+                  fillColor: Colors.black.withOpacity(0.1),
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.start,

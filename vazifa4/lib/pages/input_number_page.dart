@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_number_field/intl_phone_number_field.dart';
 
 class InputNumber extends StatefulWidget {
   const InputNumber({super.key});
@@ -65,19 +66,9 @@ class _InputNumber extends State<InputNumber> {
                   style: const TextStyle(color: Colors.red),
                 ),
                 const SizedBox(height: 10),
-                TextField(
+                InternationalPhoneNumberInput(
                   controller: numberController,
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    prefixIcon:const Icon(Icons.phone),
-                    label: const Text(
-                      "Phone Number",
-                    ),
-                    errorText: errorMessage.isEmpty ? null : errorMessage,
-                  ),
+                  betweenPadding: 2,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
